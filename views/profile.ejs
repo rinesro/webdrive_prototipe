@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Pengguna - <%= locals.user ? user.username : 'Tidak Ditemukan' %></title>
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --light-gray: #f8f9fa;
+            --dark-gray: #343a40;
+            --text-color: #495057;
+            --border-color: #dee2e6;
+            --secondary-color: #6c757d;
+        }
+
+        body { 
+            font-family: 'Inter', sans-serif; 
+            margin: 0; 
+            background-color: var(--light-gray); 
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .profile-card {
+            width: 100%;
+            max-width: 450px;
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .back-link:hover {
+            color: var(--dark-gray);
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            font-weight: 700;
+            margin: 0 auto 20px auto;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+        }
+
+        .profile-card h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark-gray);
+            margin: 0 0 10px 0;
+        }
+
+        .profile-card .email {
+            font-size: 16px;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+        }
+
+        .info-group {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .info-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #888;
+            margin-bottom: 5px;
+        }
+        .info-group p {
+            font-size: 16px;
+            margin: 0;
+            padding: 10px;
+            background-color: var(--light-gray);
+            border-radius: 8px;
+        }
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-logout {
+            background-color: #dc3545;
+            color: rgb(247, 247, 249);
+        }
+
+        .btn-logout:hover {
+            background-color: #c82333;
+            box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+        }
+        
+        .back-link {
+            margin-top: 25px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+    <% if (locals.user) { %>
+        <div class="profile-card">
+            <a href="/upload" class="back-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                </svg>
+                Kembali
+            </a>
+
+            <div class="profile-avatar">
+                <%= user.username.charAt(0).toUpperCase() %>
+            </div>
+
+            <h1><%= user.username %></h1>
+            <p class="email"><%= user.email %></p>
+
+            <hr style="border: none; border-top: 1px solid var(--border-color); margin: 30px 0;">
+
+            <div class="info-group">
+                <label>USERNAME</label>
+                <p><%= user.username %></p>
+            </div>
+
+            <div class="info-group">
+                <label>EMAIL</label>
+                <p><%= user.email %></p>
+            </div>
+            
+            <hr style="border: none; border-top: 1px solid var(--border-color); margin: 40px 0;">
+            <a href="/logout" class="btn btn-logout">Logout</a>
+        </div>
+    <% } else { %>
+        <p>Silakan <a href="/login">login</a> untuk melihat profil.</p>
+    <% } %>
+</body>
+</html>

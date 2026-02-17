@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Preview File</title>
+</head>
+<body>
+  <h1>Preview File</h1>
+  <p>Nama: <%= item.filename || item.nama %></p>
+  <p>Tipe: <%= item.contentType || item.tipe || (item.metadata && item.metadata.original_mimetype) %></p>
+  <% if ((item.metadata && item.metadata.original_mimetype && item.metadata.original_mimetype.startsWith('image')) || (item.contentType && item.contentType.startsWith('image'))) { %>
+    <img src="/download/<%= item._id %>" alt="Preview" style="max-width:400px;">
+  <% } else { %>
+    <a href="/download/<%= item._id %>">Download file</a>
+  <% } %>
+  <br>
+  <a href="javascript:history.back()">Kembali</a>
+</body>
+</html>
