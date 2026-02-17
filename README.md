@@ -14,8 +14,9 @@ WebDrive Prototipe adalah aplikasi berbasis web yang dirancang sebagai solusi ma
 
 - **Frontend:** Next.js (React Framework)
 - **Styling:** Tailwind CSS
-- **Database:** [Isi dengan Database kamu, misal: MongoDB/PostgreSQL]
-- **Storage:** [Isi dengan Storage kamu, misal: Firebase Storage/AWS S3/Local Storage]
+- **Database:** MongoDB
+- **Storage:** Local Storage
+- **OS:** WSL (Windows System Linux)
 
 ## 📋 Prasyarat
 
@@ -40,7 +41,7 @@ npm install
 
 
 3. **Konfigurasi Environment:**
-Buat file `.env` di direktori utama dan tambahkan variabel yang dibutuhkan (lihat `.env.example` jika ada).
+Buat file `.env` di direktori utama dan tambahkan variabel yang dibutuhkan (hubungi email pemilik untuk dapatkan data  .env).
 4. **Jalankan aplikasi:**
 ```bash
 npm run dev
