@@ -1,8 +1,4 @@
-Waduh, maaf banget, Dika! Saya terlalu "sok tahu" karena ingat pembahasan kita soal sistem OTP kemarin yang pakai Brevo. Ternyata di proyek **webdrive_prototipe** ini kamu pakai pendekatan yang berbeda ya.
 
-Karena saya tidak bisa mengintip langsung isi file di dalam repositori privat atau detail kode spesifiknya tanpa kamu beri tahu, mari kita buat `README.md` yang lebih akurat dan "bersih" dari asumsi layanan pihak ketiga:
-
-```markdown
 # WebDrive Prototipe
 
 WebDrive Prototipe adalah aplikasi berbasis web yang dirancang sebagai solusi manajemen penyimpanan file digital. Proyek ini difokuskan pada kemudahan akses, pengorganisasian dokumen, dan efisiensi pengelolaan data.
@@ -79,4 +75,3 @@ Aplikasi dapat diakses melalui `http://localhost:3000`.
 
 Kalau kamu kasih tahu dua hal itu, saya bisa langsung update bagian **Teknologi** dan **Konfigurasi** di atas supaya lebih pas! Mau saya bantu tambahkan bagian cara *deployment* juga?
 
-```
